@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Your Compliments</title>
+		<meta charset="utf-8">
+		{% load staticfiles %}
+		<link href="{% static 'style.css' %}" rel="stylesheet">
+	</head>
+	<body>
+		<p id = "welcome">Welcome Back, {{ current_user.first_name }} </p>
+		<a href="/success">Back to Compliments</a>
+
+							{% for compliment in compliments %}
+						
+						<p>{{ compliment.content }} {{ login_reg_compliment_favorite.user_id }}</p>
+			
+					{% endfor %}
+
+	</body>
+</html>
